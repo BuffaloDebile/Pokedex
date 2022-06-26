@@ -134,6 +134,10 @@ h1 {
 .recherche-poke button {
     margin-left: 5px;
     padding: 15px;
+    border: 1px solid white;
+    color: white;
+    position: absolute;
+    left: 99%;
 }
 
 /* animation input  */
