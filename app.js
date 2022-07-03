@@ -98,6 +98,28 @@ function createCard(arr) {
     
 }
 
+// scroll infinit
+
+window.addEventListener('scroll', () => {
+    const  {scrollTop, scrollHeight, clientHeight} = document.documentElement;
+    
+if (clientHeight + scrollTop >= scrollHeight - 20) {
+    addPoke(6);
+}
+
+})
+
+let index = 21;
+function addPoke(nb) {
+    if (index > 151) {
+        return
+    } 
+
+    const arrToAdd = allPokemon.slice(index, index + nb);
+    createCard(arrToAdd);
+    index += nb;
+}
+
 // Animation input
 
 searchInput.addEventListener('input', function(e) {
