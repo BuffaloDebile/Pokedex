@@ -120,6 +120,37 @@ function addPoke(nb) {
     index += nb;
 }
 
+// recherche
+
+searchInput.addEventListener('keyup', recherche);
+
+// const formRecherche = document.querySelector('form');
+// formRecherche.addEventListener('submit', (e) => {
+//     e.preventDefault();
+//     recherche();
+// })
+
+function recherche() {
+    if (index < 151) {
+        addPoke(130)
+    }
+
+    let filter, allli, titleValue, allTitles;
+    filter = searchInput.value.toUpperCase();
+    allli = document.querySelectorAll('li');
+    allTitles = document.querySelectorAll('li > h5')
+
+    for (let i = 0; i < allli.length; i++) {
+        titleValue = allTitles[i].innerText; 
+        
+        if (titleValue.toUpperCase().indexOf(filter) > -1) {
+            allli[i].style.display = "flex";
+        } else {
+            allli[i].style.display = "none"
+        }
+    }
+}
+
 // Animation input
 
 searchInput.addEventListener('input', function(e) {
